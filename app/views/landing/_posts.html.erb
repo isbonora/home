@@ -1,18 +1,20 @@
-
-
-<div class="container">
-  <h2>Posts</h2>
-  <div class=" flex flex-col gap-3">
-    <% Post.published.each do |post| %>
-    <div class="bg-neutral-100 px-4 py-2">
-        <%= link_to post_url post do |link|%>
-            <div class="flex flex-row justify-between items-center">
-                <span class="text-md font-bold text-black"><%= post.title %></span>
-                <span class="text-sm text-gray-500"><%= post.created_at.strftime("%Y") %></span>
-            </div>
-            <p class="text-sm text-gray-500"><%= post.description %></p>
-        <% end %>
+<% %w[big words small].each do |category| %>
+    <% if Post.where(category: category).published.present? %>
+    <div class="container">
+        <h2 class="text-neutral-400 font-light"><%= category.titleize.pluralize %></h2>
+        <div class=" flex flex-col gap-3">
+            <% Post.where(category: category).published.each do |post| %>
+            <div class="bg-neutral-100 px-4 py-2">
+                <%= link_to post_url post do |link|%>
+                    <div class="flex flex-row justify-between items-center">
+                        <span class="text-md font-bold text-black"><%= post.title %></span>
+                        <span class="text-sm text-gray-500"><%= post.created_at.strftime("%Y") %></span>
+                    </div>
+                    <p class="text-sm text-gray-500"><%= post.description %></p>
+                <% end %>
+                </div>
+            <% end %>
         </div>
+    </div>
     <% end %>
-  </div>
-</div>
+<% end %>

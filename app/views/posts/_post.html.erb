@@ -1,21 +1,22 @@
-<div id="<%= dom_id post %>" class="flex flex-col gap-3 mb-5">
+<div id="<%= dom_id post %>" class="flex flex-col gap-3 mb-5 relative">
   
-   <h1 class="text-2xl font-bold text-gray-900">
-    <%= post.title %>
-  </h1>
+  <div class="bg-neutral-100 px-4 py-2">
+    
+    <div class=" flex flex-col gap-1">
+      <h1 class="text-2xl font-bold text-gray-900">
+        <%= post.title %>
+      </h1>
+    </div>
 
-  <p>
-    <%= post.description %>
-    </p>
-<div class="bg-slate-100 px-4 py-2">
     <div class="flex flex-row justify-between items-center">
-      <span class="text-sm text-gray-500"><%= post.author %></span>
+      <p class="text-sm text-gray-500"><%= post.description %></p>
       <span class="text-sm text-gray-500"><%= post.created_at.strftime("%Y") %></span>
     </div>
-    
+
   </div>
 
   <div class="bg-neutral-100 px-4 py-2 w-full">
     <%= post.content %>
   </div>
+
 </div>

@@ -14,6 +14,13 @@ class Post < ApplicationRecord
 
   validates :redirect_link, allow_blank: true, format: { with: URI::DEFAULT_PARSER.make_regexp(%w[http https]), message: "must be a valid URL" }
 
+  # Scopes
 
   scope :published, -> { where(status: "published") }
+  scope :drafts, -> { where(status: "draft") }
+  scope :archived, -> { where(status: "archived") }
+
+  scope :biggie, -> { where(category: "big") }
+  scope :wordy, -> { where(category: "words") }
+  scope :smally, -> { where(category: "small") }
 end
