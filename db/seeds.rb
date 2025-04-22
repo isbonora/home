@@ -9,7 +9,33 @@
 #   end
 
 
-User.create!(
-  email_address: ENV.fetch("ADMIN_EMAIL", "isaac@example.com"),
-  password: ENV.fetch("ADMIN_PASSWORD", "password")
+User.find_or_create_by!(email_address: ENV.fetch("ADMIN_EMAIL", "isaac@example.com")) do |user|
+  user.password = ENV.fetch("ADMIN_PASSWORD", "password")
+end
+
+Post.create!(
+  title: "Hello Big World",
+  description: "This is a test post.",
+  author: "Mr Seed.",
+  content: "<p>This is a test post.</p>",
+  status: "published",
+  category: "big",
+)
+
+Post.create!(
+  title: "Hello Small World",
+  description: "This is a test post.",
+  author: "Mr Seed.",
+  content: "<p>This is a test post.</p>",
+  status: "published",
+  category: "small",
+)
+
+Post.create!(
+  title: "Goodbye Small World",
+  description: "This is a test post.",
+  author: "Mr Seed.",
+  content: "<p>This is a test post.</p>",
+  status: "draft",
+  category: "small",
 )

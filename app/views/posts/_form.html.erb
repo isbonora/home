@@ -28,12 +28,12 @@
 
   <div class="my-5">
     <%= form.label :status %>
-    <%= form.text_field :status, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:status].none?, "border-red-400 focus:outline-red-600": post.errors[:status].any?}] %>
+    <%= form.select :status, ["draft", "published", "archived"], {}, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:status].none?, "border-red-400 focus:outline-red-600": post.errors[:status].any?}] %>
   </div>
 
   <div class="my-5">
     <%= form.label :category %>
-    <%= form.text_field :category, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:category].none?, "border-red-400 focus:outline-red-600": post.errors[:category].any?}] %>
+    <%= form.select :category, ["big", "small", "words"], {}, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:status].none?, "border-red-400 focus:outline-red-600": post.errors[:status].any?}] %>
   </div>
 
   <div class="my-5">

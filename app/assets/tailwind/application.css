@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+
+@layer utilities {
+    a {
+        @apply text-blue-500 hover:underline;
+    }
+    .container {
+        @apply relative;
+    }
+    .container h2 {
+        @apply sm:-left-36 sm:absolute;
+    }
+    .container .content {
+        @apply bg-neutral-100 px-4 py-2;
+    }
+}

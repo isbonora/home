@@ -1,8 +1,22 @@
-<div class="flex flex-row justify-between w-full">
-    <div class="flex flex-row items-center">
-        <%= link_to "Isaac Bonora", root_path, class: "text-2xl font-bold text-gray-900" %>
+<div class="container">
+        <% if authenticated? %>
+    <h2 class="opacity-25 hover:opacity-100">
+            <%= form_with url: session_path, method: :delete, class: "inline" do %>
+                <button type="submit" class="text-red-500 hover:underline">Logout</button>
+            <% end %>
+    </h2>
+        <% end %>
+    <div class="flex flex-row items-center gap-2">
+        <%= image_tag "headshot.jpeg", alt: "Logo", class: "h-18 w-18 mr-2 rounded-full" %>
+        <div class="flex flex-col">
+            <%= link_to "Isaac Bonora", root_path, class: "text-2xl font-light text-gray-900" %>
+            <span class="text-sm">Industrial Designer in Munich, DE.</span>
+            <div class="flex gap-2 mt-1">
+                <%= link_to "linkedin", "https://www.linkedin.com/in/isbonora/", class:"bg-slate-200 text-xs px-1 py-0.5", target: "_blank" %>
+                <%= link_to "github", "https://github.com/isbonora", class:"bg-slate-200 text-xs px-1 py-0.5", target: "_blank" %>
+                <%= link_to "instagram", "https://www.instagram.com/isbonora.design/", class:"bg-slate-200 text-xs px-1 py-0.5", target: "_blank" %>
+                <%= link_to "read.cv", "https://read.cv/isbonora", class:"bg-slate-200 text-xs px-1 py-0.5", target: "_blank" %>
+            </div>
+        </div>
     </div>
-    <% if authenticated? %>
-    <div class="flex flex-row items-center bg-green-500 px-4">logged in</div>
-    <% end %>
 </div>  
