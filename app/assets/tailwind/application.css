@@ -16,6 +16,6 @@
     }
 
     figcaption.attachment__caption {
-        @apply text-center text-neutral-600 tex-base;
+        @apply text-center text-neutral-600;
     }
 }
