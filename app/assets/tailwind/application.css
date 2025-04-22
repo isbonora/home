@@ -14,4 +14,8 @@
     .container .content {
         @apply bg-neutral-100 px-4 py-2;
     }
+
+    figcaption.attachment__caption {
+        @apply text-center text-neutral-600 tex-base;
+    }
 }

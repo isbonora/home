@@ -338,7 +338,9 @@ trix-editor .attachment__metadata {
     white-space: nowrap; }
 
 .trix-content {
-  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 350;
+  line-height: 1.6;
   overflow-wrap: break-word;
   word-break: break-word; }
   .trix-content * {
@@ -346,7 +348,7 @@ trix-editor .attachment__metadata {
     margin: 0;
     padding: 0; }
   .trix-content h1 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     line-height: 1.2; }
   .trix-content blockquote {
     border: 0 solid #ccc;
