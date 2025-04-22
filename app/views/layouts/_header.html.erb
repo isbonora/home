@@ -1,6 +1,8 @@
-<div class="flex flex-col w-full">
-    <span>
-        <%= link_to "Isaac", root_path, class: "text-2xl font-bold text-gray-900" %>
-    </span>
-    <span>asdf</span>
-</div>
+<div class="flex flex-row justify-between w-full">
+    <div class="flex flex-row items-center">
+        <%= link_to "Isaac Bonora", root_path, class: "text-2xl font-bold text-gray-900" %>
+    </div>
+    <% if authenticated? %>
+    <div class="flex flex-row items-center bg-green-500 px-4">logged in</div>
+    <% end %>
+</div>  

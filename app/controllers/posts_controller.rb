@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    redirect_to @post.redirect_link, status: :moved_permanently if @post.redirect_link.present?
   end
 
   # GET /posts/new
