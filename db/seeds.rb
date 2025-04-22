@@ -10,6 +10,6 @@
 
 
 User.create!(
-  email_address: ENV.fetch("USER_EMAIL", "isaac@example.org"),
-  password: ENV.fetch("USER_PASSWORD", "default_password")
+  email_address: ENV.fetch("ADMIN_EMAIL", "isaac@example.com"),
+  password: ENV.fetch("ADMIN_PASSWORD", "password")
 )
