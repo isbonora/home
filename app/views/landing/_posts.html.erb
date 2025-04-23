@@ -1,8 +1,8 @@
-<% %w[big words small].each do |category| %>
+<% %w[project written small ddr misc].each do |category| %>
     <% if Post.where(category: category).published.present? %>
     <div class="container">
-        <h2 class="text-neutral-400 font-light"><%= category.titleize.pluralize %></h2>
-        <div class=" flex flex-col gap-3">
+        <h2 class="text-neutral-400 font-light pb-2 sm:pb-0"><%= category.titleize.pluralize %></h2>
+        <div class="grid grid-cols-2 gap-3">
             <% Post.where(category: category).published.each do |post| %>
             <div class="bg-neutral-100 px-4 py-2">
                 <%= link_to post_url post do |link|%>

@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   has_rich_text :content
 
   ALLOWED_STATUSES = %w[draft published archived].freeze
-  ALLOWED_CATEGORIES = %w[big words small].freeze
+  ALLOWED_CATEGORIES = %w[project written small ddr misc].freeze
 
   validates :title, presence: true
   validates :description, presence: true
@@ -19,8 +19,4 @@ class Post < ApplicationRecord
   scope :published, -> { where(status: "published") }
   scope :drafts, -> { where(status: "draft") }
   scope :archived, -> { where(status: "archived") }
-
-  scope :biggie, -> { where(category: "big") }
-  scope :wordy, -> { where(category: "words") }
-  scope :smally, -> { where(category: "small") }
 end

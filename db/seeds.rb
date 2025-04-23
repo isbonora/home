@@ -19,7 +19,7 @@ Post.create!(
   author: "Mr Seed.",
   content: "<p>This is a test post.</p>",
   status: "published",
-  category: "big",
+  category: "project",
 )
 
 Post.create!(
