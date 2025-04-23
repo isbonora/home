@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
 
-  resources :posts
+  resources :posts, param: :slug
 end
