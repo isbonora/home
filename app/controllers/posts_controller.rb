@@ -9,7 +9,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
-    redirect_to @post.redirect_link, status: :moved_permanently if @post.redirect_link.present?
+    unless request.referer&.include?(edit_post_path(@post))
+      redirect_to @post.redirect_link, status: :moved_permanently, allow_other_host: true if @post.redirect_link.present?
+    end
   end
 
   # GET /posts/new
@@ -67,6 +69,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.expect(post: [ :title, :description, :author, :status, :category, :content, :published_at ])
+      params.expect(post: [ :title, :description, :author, :redirect_link, :category, :content, :published_at ])
     end
 end
