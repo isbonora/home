@@ -10,16 +10,24 @@
 
     <div class="flex flex-row justify-between items-center">
       <p class="text-sm text-gray-500"><%= post.description %></p>
-      <% if post.published? %>
+   
+      
+    </div>
+   <% if post.published? %>
       <span class="text-sm text-gray-500"><%= post.published_at.strftime("%Y") %></span>
       <% elsif post.scheduled? %>
       <span class="text-sm text-gray-500">Scheduled <%= post.published_at %></span>
       <% else %>
       <span class="text-sm text-red-500">DRAFT</span>
       <% end %>
-    </div>
-
+        <% if post.redirect_link.present? %>
+    <div class=" text-red-500">
+       <%= link_to "Redirected", post.redirect_link %>
+      </div>
+  <% end %>
   </div>
+
+
 
   <% unless action_name == "index" %>
     <div class="bg-neutral-100 px-4 py-2 w-full">
