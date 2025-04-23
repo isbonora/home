@@ -364,8 +364,14 @@ trix-editor .attachment__metadata {
     border-right-width: 0.3em;
     margin-right: 0.3em;
     padding-right: 0.6em; }
-  .trix-content li {
-    margin-left: 1em; }
+  .trix-content ul li {
+    margin-left: 1.5em; 
+    list-style-type: disc;
+    }
+  .trix-content ol li {
+    margin-left: 1.5em; 
+    list-style-type: decimal;
+    }
   .trix-content [dir=rtl] li {
     margin-right: 1em; }
   .trix-content pre {
