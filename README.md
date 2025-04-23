@@ -1,24 +1,7 @@
-# README
+# Isaac Bonora Home
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails 8 project, that utilised Kamal 2 to deploy online with a Hetzner box. It is the portfolio website of Isaac Bonora and isn't really recomended for your own hosting. 
 
-Things you may want to cover:
+It follows standard practices to build and deploy Rails with Kamal.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+> tbd
