@@ -17,7 +17,7 @@ module Publishable
       published_at.present? && published_at > Date.today
     end
 
-    def draft
+    def draft?
       !published?
     end
   end

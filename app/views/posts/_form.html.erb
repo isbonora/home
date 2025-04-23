@@ -11,23 +11,6 @@
     </div>
   <% end %> 
 
-  <div class="flex space-x-2 mt-2">
-    <% case %i[published scheduled draft].find { |status| post.public_send("#{status}?") } %>
-    <% when :published %>
-      <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
-        Published
-      </span>
-    <% when :scheduled %>
-      <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
-        Scheduled
-      </span>
-    <% when :draft %>
-      <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
-        This is draft
-      </span>
-    <% end %>
-  </div>
-
 
   <div class="grid grid-cols-2  gap-4">
   <div class="col-span-2">

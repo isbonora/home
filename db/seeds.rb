@@ -18,7 +18,7 @@ Post.create!(
   description: "This is a test post.",
   author: "Mr Seed.",
   content: "<p>This is a test post.</p>",
-  status: "published",
+  published_at: Date.today,
   category: "project",
 )
 
@@ -27,7 +27,7 @@ Post.create!(
   description: "This is a test post.",
   author: "Mr Seed.",
   content: "<p>This is a test post.</p>",
-  status: "published",
+  published_at: Date.today,
   category: "small",
 )
 
@@ -36,6 +36,5 @@ Post.create!(
   description: "This is a test post.",
   author: "Mr Seed.",
   content: "<p>This is a test post.</p>",
-  status: "draft",
   category: "small",
 )
