@@ -81,7 +81,7 @@ Rails.application.configure do
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   config.hosts = [
-    "app.isbonora.com"
+    "isbonora.com"
   ]
 
   # Skip DNS rebinding protection for the default health check endpoint.
