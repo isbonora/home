@@ -9,46 +9,67 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+  <% end %> 
 
-  <div class="my-5">
+  <div class="flex space-x-2 mt-2">
+    <% case %i[published scheduled draft].find { |status| post.public_send("#{status}?") } %>
+    <% when :published %>
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+        Published
+      </span>
+    <% when :scheduled %>
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
+        Scheduled
+      </span>
+    <% when :draft %>
+      <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+        This is draft
+      </span>
+    <% end %>
+  </div>
+
+
+  <div class="grid grid-cols-2  gap-4">
+  <div class="col-span-2">
     <%= form.label :title %>
     <%= form.text_field :title, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:title].none?, "border-red-400 focus:outline-red-600": post.errors[:title].any?}] %>
   </div>
 
-  <div class="my-5">
+  <div class="col-span-2">
     <%= form.label :description %>
     <%= form.text_field :description, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:description].none?, "border-red-400 focus:outline-red-600": post.errors[:description].any?}] %>
   </div>
 
-  <div class="my-5">
+  <div class="">
     <%= form.label :author %>
     <%= form.text_field :author, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:author].none?, "border-red-400 focus:outline-red-600": post.errors[:author].any?}] %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :status %>
-    <%= form.select :status, ["draft", "published", "archived"], {}, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:status].none?, "border-red-400 focus:outline-red-600": post.errors[:status].any?}] %>
+  <div class="">
+    <%= form.label :published_at %>
+    <%= form.date_field :published_at, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:author].none?, "border-red-400 focus:outline-red-600": post.errors[:author].any?}] %>
   </div>
 
-  <div class="my-5">
+  <div class="">
     <%= form.label :category %>
     <%= form.select :category, ["project", "written", "small", "misc", "ddr"], {}, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:status].none?, "border-red-400 focus:outline-red-600": post.errors[:status].any?}] %>
   </div>
 
-  <div class="my-5">
+  <div class="">
     <%= form.label :redirect_url %>
     <%= form.text_field :redirect_url, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:category].none?, "border-red-400 focus:outline-red-600": post.errors[:category].any?}] %>
   </div>
 
-  <div class="my-5">
+  <div class="">
     <%= form.label :slug %>
     <%= form.text_field :slug, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:category].none?, "border-red-400 focus:outline-red-600": post.errors[:category].any?}] %>
   </div>
 
-    <div class="field">
+
+    <div class="field col-span-2">
     <%= form.label :content %>
     <%= form.rich_textarea :content %>
+  </div>
   </div>
 
   <div class="inline">

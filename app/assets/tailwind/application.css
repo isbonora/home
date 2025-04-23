@@ -19,6 +19,7 @@ html, body {
 }
 
 
+
 @layer utilities {
     a {
         @apply text-blue-500 hover:underline;
@@ -35,5 +36,9 @@ html, body {
 
     figcaption.attachment__caption {
         @apply text-center text-neutral-600;
+    }
+
+    trix-toolbar {
+        @apply sticky top-0 bg-white pt-2;
     }
 }

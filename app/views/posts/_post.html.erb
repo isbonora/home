@@ -10,7 +10,13 @@
 
     <div class="flex flex-row justify-between items-center">
       <p class="text-sm text-gray-500"><%= post.description %></p>
-      <span class="text-sm text-gray-500"><%= post.created_at.strftime("%Y") %></span>
+      <% if post.published? %>
+      <span class="text-sm text-gray-500"><%= post.published_at.strftime("%Y") %></span>
+      <% elsif post.scheduled? %>
+      <span class="text-sm text-gray-500">Scheduled <%= post.published_at %></span>
+      <% else %>
+      <span class="text-sm text-red-500">DRAFT</span>
+      <% end %>
     </div>
 
   </div>
